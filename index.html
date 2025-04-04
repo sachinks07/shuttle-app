@@ -202,7 +202,7 @@ function clearBusMarkers() {
   
   // Create the bus marker
   const busMarker = L.marker(position, {
-    icon: createBusIcon(routeColor)
+    icon: createBusIcon(selectedRoute.color)
   }).addTo(map);
   
   // Set popup content
@@ -283,6 +283,7 @@ function clearBusMarkers() {
                 if (result.success && Array.isArray(result.data)) {
                     routes = result.data
                     selectedRoute = routes[0];
+                    
 
                 } else {
                     console.error('Invalid API response format');
